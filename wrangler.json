@@ -1,0 +1,9 @@
+{
+  // إعداد wrangler لمشروع Cloudflare Pages — بيستعمله:
+  //   npx wrangler pages deploy    (بيرفع مجلد dist تلقائيًا)
+  // ملاحظة: إعدادات Pages لا تدعم "rules" (دي خاصة بـWorkers) فمتضيفهاش هنا.
+  "name": "alkuraimi-static-demo",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-10-27",
+  "compatibility_flags": ["nodejs_compat"]
+}

@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1793495078205,
+      "tag": "0000_init_baseline",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793495376189,
+      "tag": "0001_create_site_visits",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793495599239,
+      "tag": "0002_create_card_activation_requests",
+      "breakpoints": true
+    }
+  ]
+}
