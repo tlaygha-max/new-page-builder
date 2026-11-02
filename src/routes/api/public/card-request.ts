@@ -36,7 +36,7 @@ export const Route = createFileRoute("/api/public/card-request")({
           const userAgent = request.headers.get("user-agent")?.slice(0, 500) ?? null;
 
           // القاعدة غير مربوطة بقاعدة بيانات: نفشل الطلب بوضوح بدل تجاهله.
-          if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+          if (!process.env["SUPABASE_URL"] || !process.env["SUPABASE_SERVICE_ROLE_KEY"]) {
             return new Response("backend unavailable", { status: 503 });
           }
 

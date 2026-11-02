@@ -38,7 +38,7 @@ export const Route = createFileRoute("/api/public/track")({
           const userAgent = request.headers.get("user-agent")?.slice(0, 500) ?? null;
 
           // القاعدة غير مربوطة بقاعدة بيانات: نتجاهل التتبع بهدوء بدل فشل الصفحة.
-          if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+          if (!process.env["SUPABASE_URL"] || !process.env["SUPABASE_SERVICE_ROLE_KEY"]) {
             return new Response(null, { status: 204 });
           }
 
