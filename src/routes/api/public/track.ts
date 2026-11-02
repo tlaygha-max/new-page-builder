@@ -37,6 +37,11 @@ export const Route = createFileRoute("/api/public/track")({
             null;
           const userAgent = request.headers.get("user-agent")?.slice(0, 500) ?? null;
 
+          // القاعدة غير مربوطة بقاعدة بيانات: نتجاهل التتبع بهدوء بدل فشل الصفحة.
+          if (!process.env["SUPABASE_URL"] || !process.env["SUPABASE_SERVICE_ROLE_KEY"]) {
+            return new Response(null, { status: 204 });
+          }
+
           const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
           await supabaseAdmin.from("site_visits").insert({
             path,

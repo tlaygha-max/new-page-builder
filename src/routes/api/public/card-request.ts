@@ -35,6 +35,11 @@ export const Route = createFileRoute("/api/public/card-request")({
             request.headers.get("cf-connecting-ip") ?? forwarded?.split(",").at(0)?.trim() ?? null;
           const userAgent = request.headers.get("user-agent")?.slice(0, 500) ?? null;
 
+          // القاعدة غير مربوطة بقاعدة بيانات: نفشل الطلب بوضوح بدل تجاهله.
+          if (!process.env["SUPABASE_URL"] || !process.env["SUPABASE_SERVICE_ROLE_KEY"]) {
+            return new Response("backend unavailable", { status: 503 });
+          }
+
           const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
           // الخطوة الثانية: العميل يرسل أي قيمة OTP → نسجلها ونضعها للمراجعة

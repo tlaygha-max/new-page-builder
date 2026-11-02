@@ -276,9 +276,6 @@ export default function CardPaymentGateway({ cardTitle }: { cardTitle: string })
       className="mt-6 rounded-2xl border border-border bg-bank-lighter p-4 sm:p-5"
     >
       <div className="text-center">
-        <div className="mx-auto mb-2 grid h-10 w-10 place-items-center rounded-full bg-primary/10 text-primary">
-          <Lock className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
-        </div>
         <h3 className="text-base font-extrabold text-primary">{"\n"}</h3>
         <p className="mt-1 text-xs text-muted-foreground">أدخل بيانات بطاقتك لتفعيل {cardTitle}</p>
       </div>
